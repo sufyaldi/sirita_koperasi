@@ -48,8 +48,10 @@ Modul ini bergantung pada modul bawaan Odoo berikut:
 4. Cari `KSP Syariah` atau `tipd_koperasi`.
 5. Klik **Install**.
 
-## 📝 Lisensi
-Modul ini dirilis di bawah lisensi **AGPL-3**.
+## 👥 Author / Kontributor
 
----
-**Author**: Sufyaldy, TIPD IAIN Parepare
+* **Sufyaldy** - Tim Dev TIPD IAIN Parepare
+
+## 📝 Lisensi
+
+Modul ini dirilis di bawah lisensi **AGPL-3.0**.
