@@ -1,4 +1,4 @@
-# KSP Syariah (BMT, Credit Scoring, SLIK OJK, & Laporan Kemenkop)
+# KSP Syariah ERP
 
 Modul Odoo ini dirancang untuk memperluas fungsionalitas Koperasi Simpan Pinjam (KSP) standar dengan mendukung operasional Koperasi Syariah (BMT), penilaian kelayakan kredit (Credit Scoring & SLIK OJK), serta pelaporan kesehatan koperasi sesuai standar Kementerian Koperasi dan UKM (Kemenkop) / OJK.
 
