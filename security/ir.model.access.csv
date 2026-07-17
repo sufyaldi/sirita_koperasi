@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ksp_pembiayaan_syariah,ksp.pembiayaan.syariah,model_ksp_pembiayaan_syariah,,1,1,1,1
+access_ksp_simpanan_syariah,ksp.simpanan.syariah,model_ksp_simpanan_syariah,,1,1,1,1
+access_ksp_credit_scoring,ksp.credit.scoring,model_ksp_credit_scoring,,1,1,1,1
+access_ksp_rasio_kesehatan,ksp.rasio.kesehatan,model_ksp_rasio_kesehatan,,1,1,1,1
+access_ksp_baitul_maal,ksp.baitul.maal,model_ksp_baitul_maal,,1,1,1,1

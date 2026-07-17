@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_pembiayaan_syariah_form" model="ir.ui.view">
+        <field name="name">ksp.pembiayaan.syariah.form</field>
+        <field name="model">ksp.pembiayaan.syariah</field>
+        <field name="arch" type="xml">
+            <form string="Pembiayaan Syariah">
+                <header>
+                    <button name="action_request_scoring" string="Proses Credit Scoring" type="object" invisible="state != 'draft'" class="oe_highlight"/>
+                    <button name="action_approve" string="Setujui" type="object" invisible="state != 'scoring'" class="oe_highlight"/>
+                    <button name="action_disburse" string="Cairkan Dana" type="object" invisible="state != 'approved'" class="oe_highlight"/>
+                    <button name="action_pay_installment" string="Bayar Cicilan (Simulasi)" type="object" invisible="state != 'active'" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,scoring,approved,active,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="anggota_id"/>
+                            <field name="akad"/>
+                            <field name="tanggal_pengajuan"/>
+                            <field name="tenor"/>
+                        </group>
+                        <group>
+                            <field name="harga_beli"/>
+                            <field name="margin" invisible="akad != 'murabahah'"/>
+                            <field name="nisbah_bmt" invisible="akad == 'murabahah'"/>
+                            <field name="nisbah_anggota" invisible="akad == 'murabahah'"/>
+                            <field name="harga_jual"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Hasil SLIK &amp; Scoring" invisible="state == 'draft'">
+                            <group>
+                                <field name="scoring_id"/>
+                                <field name="skor_akhir"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_pembiayaan_syariah_list" model="ir.ui.view">
+        <field name="name">ksp.pembiayaan.syariah.list</field>
+        <field name="model">ksp.pembiayaan.syariah</field>
+        <field name="arch" type="xml">
+            <list string="Pembiayaan Syariah">
+                <field name="name"/>
+                <field name="anggota_id"/>
+                <field name="akad"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_pembiayaan_syariah" model="ir.actions.act_window">
+        <field name="name">Pembiayaan Syariah</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ksp.pembiayaan.syariah</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

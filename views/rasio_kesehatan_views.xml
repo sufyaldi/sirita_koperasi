@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_rasio_kesehatan_form" model="ir.ui.view">
+        <field name="name">ksp.rasio.kesehatan.form</field>
+        <field name="model">ksp.rasio.kesehatan</field>
+        <field name="arch" type="xml">
+            <form string="Laporan Rasio Kesehatan">
+                <header>
+                    <button name="action_generate_excel" string="Download Excel Kemenkop" type="object" class="oe_highlight"/>
+                </header>
+                <sheet>
+                    <group>
+                        <field name="tanggal_laporan"/>
+                    </group>
+                    <group string="Indikator Tingkat Kesehatan (Dummy Data)">
+                        <group>
+                            <field name="car"/>
+                            <field name="npf"/>
+                            <field name="fdr"/>
+                        </group>
+                        <group>
+                            <field name="roa"/>
+                            <field name="roe"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_rasio_kesehatan" model="ir.actions.act_window">
+        <field name="name">Rasio Kesehatan Koperasi</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ksp.rasio.kesehatan</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+</odoo>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Root Menu -->
+    <menuitem id="menu_ksp_syariah_root" 
+              name="KSP Syariah" 
+              sequence="10"/>
+
+    <!-- Kategori Menu -->
+    <menuitem id="menu_ksp_simpanan_category" 
+              name="Simpanan" 
+              parent="menu_ksp_syariah_root" 
+              sequence="10"/>
+
+    <menuitem id="menu_ksp_pembiayaan_category" 
+              name="Pembiayaan" 
+              parent="menu_ksp_syariah_root" 
+              sequence="20"/>
+
+    <menuitem id="menu_ksp_baitul_maal_category" 
+              name="Baitul Maal (ZIS)" 
+              parent="menu_ksp_syariah_root" 
+              sequence="30"/>
+
+    <menuitem id="menu_ksp_laporan_category" 
+              name="Laporan" 
+              parent="menu_ksp_syariah_root" 
+              sequence="40"/>
+
+    <menuitem id="menu_ksp_baitul_maal_action" 
+              name="Penerimaan ZIS" 
+              parent="menu_ksp_baitul_maal_category" 
+              action="action_baitul_maal" 
+              sequence="10"/>
+
+    <!-- Action Menus -->
+    <menuitem id="menu_ksp_simpanan_syariah" 
+              name="Data Simpanan" 
+              parent="menu_ksp_simpanan_category" 
+              action="action_simpanan_syariah" 
+              sequence="10"/>
+
+    <menuitem id="menu_ksp_pembiayaan_syariah" 
+              name="Data Pembiayaan" 
+              parent="menu_ksp_pembiayaan_category" 
+              action="action_pembiayaan_syariah" 
+              sequence="10"/>
+
+    <menuitem id="menu_ksp_credit_scoring" 
+              name="Credit Scoring" 
+              parent="menu_ksp_pembiayaan_category" 
+              action="action_credit_scoring" 
+              sequence="20"/>
+
+    <menuitem id="menu_ksp_rasio_kesehatan" 
+              name="Rasio Kesehatan Koperasi" 
+              parent="menu_ksp_laporan_category" 
+              action="action_rasio_kesehatan" 
+              sequence="10"/>
+</odoo>

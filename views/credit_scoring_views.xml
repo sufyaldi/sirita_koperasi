@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_credit_scoring_form" model="ir.ui.view">
+        <field name="name">ksp.credit.scoring.form</field>
+        <field name="model">ksp.credit.scoring</field>
+        <field name="arch" type="xml">
+            <form string="Credit Scoring">
+                <header>
+                    <button name="action_fetch_slik" string="Tarik Data SLIK OJK" type="object" class="oe_highlight" invisible="not gunakan_slik"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Data Anggota">
+                            <field name="anggota_id"/>
+                            <field name="tanggal_skor"/>
+                            <field name="gunakan_slik" widget="boolean_toggle"/>
+                        </group>
+                        <group string="Parameter Internal">
+                            <field name="poin_lama_anggota"/>
+                            <field name="poin_saldo_simpanan"/>
+                            <field name="poin_riwayat_npl"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Hasil SLIK OJK (External)" invisible="not gunakan_slik">
+                            <field name="slik_status"/>
+                            <field name="slik_outstanding_luar"/>
+                            <field name="slik_raw_response"/>
+                        </group>
+                        <group string="Keputusan Sistem">
+                            <field name="total_skor"/>
+                            <field name="rekomendasi" style="color:red; font-weight:bold;"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_credit_scoring_list" model="ir.ui.view">
+        <field name="name">ksp.credit.scoring.list</field>
+        <field name="model">ksp.credit.scoring</field>
+        <field name="arch" type="xml">
+            <list string="Credit Scoring">
+                <field name="name"/>
+                <field name="anggota_id"/>
+                <field name="total_skor"/>
+                <field name="slik_status"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_credit_scoring" model="ir.actions.act_window">
+        <field name="name">Credit Scoring</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ksp.credit.scoring</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>

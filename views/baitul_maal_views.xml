@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_baitul_maal_form" model="ir.ui.view">
+        <field name="name">ksp.baitul.maal.form</field>
+        <field name="model">ksp.baitul.maal</field>
+        <field name="arch" type="xml">
+            <form string="Penerimaan ZIS">
+                <header>
+                    <button name="action_terima_dana" string="Terima &amp; Bukukan Dana" type="object" invisible="state != 'draft'" class="oe_highlight"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="tipe_dana"/>
+                            <field name="donatur_id"/>
+                            <field name="nama_hamba_allah" invisible="donatur_id != False"/>
+                        </group>
+                        <group>
+                            <field name="tanggal"/>
+                            <field name="nominal"/>
+                            <field name="currency_id" invisible="1"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Keterangan">
+                            <field name="keterangan" placeholder="Catatan tambahan..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter/>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_baitul_maal_list" model="ir.ui.view">
+        <field name="name">ksp.baitul.maal.list</field>
+        <field name="model">ksp.baitul.maal</field>
+        <field name="arch" type="xml">
+            <list string="Penerimaan ZIS">
+                <field name="name"/>
+                <field name="tanggal"/>
+                <field name="tipe_dana"/>
+                <field name="donatur_id"/>
+                <field name="nominal"/>
+                <field name="state"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="action_baitul_maal" model="ir.actions.act_window">
+        <field name="name">Penerimaan ZIS</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">ksp.baitul.maal</field>
+        <field name="view_mode">list,form</field>
+    </record>
+</odoo>
